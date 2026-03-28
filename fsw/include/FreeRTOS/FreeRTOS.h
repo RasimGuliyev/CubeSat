@@ -3,6 +3,8 @@
 
 /* FreeRTOS Mock Header - Temporal compile fix */
 
+#include <stdint.h>
+
 /* Task states */
 #define tskRUNNING_CHAR  ( 'X' )
 #define tskBLOCKED_CHAR  ( 'B' )

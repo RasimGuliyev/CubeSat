@@ -10,6 +10,6 @@ typedef QueueHandle_t SemaphoreHandle_t;
 // Semaphore creation functions
 #define xSemaphoreCreateMutex() xQueueCreateMutex()
 #define xSemaphoreTake(sem, timeout) xQueueSemaphoreTake(sem, timeout)
-#define xSemaphoreGive(sem) xQueueGenericSend(sem, NULL, 0, queueSEND_TO_BACK)
+#define xSemaphoreGive(sem) xQueueSendToBack(sem, NULL, 0)
 
 #endif // SEMPHR_H

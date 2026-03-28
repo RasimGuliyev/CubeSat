@@ -1,0 +1,156 @@
+# sim/config.json
+# CubeSat Sistem Konfigürasyonu
+
+{
+  "satellite": {
+    "name": "Ulas-S1",
+    "launch_date": "2026-06-15",
+    "mission_duration_days": 365,
+    "mass_kg": 10.0,
+    "volume_cm3": 10000
+  },
+  "orbit": {
+    "type": "Sun-Synchronous",
+    "altitude_km": 360,
+    "inclination_degrees": 98.0,
+    "orbital_period_minutes": 90.5,
+    "semi_major_axis_km": 6730.0,
+    "eccentricity": 0.0001
+  },
+  "power_system": {
+    "battery": {
+      "type": "Lithium-Ion",
+      "capacity_wh": 72,
+      "capacity_mah": 20000,
+      "nominal_voltage_v": 3.9,
+      "min_voltage_v": 3.0,
+      "max_voltage_v": 4.2
+    },
+    "solar_panels": {
+      "total_area_m2": 0.04,
+      "efficiency_percent": 28,
+      "peak_power_w": 10
+    },
+    "eps_controller": {
+      "type": "BQ24295",
+      "i2c_address": "0x6A",
+      "max_charge_current_ma": 2000,
+      "input_current_limit_ma": 500
+    }
+  },
+  "attitude_determination": {
+    "magnetometer": {
+      "type": "RM3100",
+      "i2c_address": "0x20",
+      "range_uT": 3000,
+      "sample_rate_hz": 10,
+      "calibration": {
+        "hard_iron_x_uT": 5.2,
+        "hard_iron_y_uT": -3.1,
+        "hard_iron_z_uT": 2.8,
+        "soft_iron_matrix": [
+          [1.05, -0.02, 0.01],
+          [-0.02, 1.03, 0.00],
+          [0.01, 0.00, 1.02]
+        ]
+      }
+    },
+    "sun_sensor": {
+      "type": "Mock",
+      "number_of_sensors": 6
+    }
+  },
+  "communication": {
+    "lora": {
+      "type": "RFM98W",
+      "frequency_mhz": 868.0,
+      "bandwidth_khz": 125,
+      "spreading_factor": 7,
+      "tx_power_dbm": 20,
+      "uart_baudrate": 9600
+    },
+    "csp": {
+      "own_address": 10,
+      "mtu_bytes": 250,
+      "routing_enabled": true
+    },
+    "aes_encryption": {
+      "enabled": true,
+      "mode": "CTR-256",
+      "key_size_bits": 256,
+      "iv_size_bytes": 16
+    }
+  },
+  "payload": {
+    "radiation_sensor": {
+      "type": "GQ-511A",
+      "uart_baudrate": 9600,
+      "sensitivity_cpm_per_usv": 100
+    },
+    "environmental_sensors": {
+      "barometer": {
+        "type": "BMP388",
+        "i2c_address": "0x76",
+        "pressure_range_pa": [300000, 110000],
+        "temperature_range": [-40, 85]
+      },
+      "gps": {
+        "type": "NEO-M9N",
+        "uart_baudrate": 38400,
+        "update_rate_hz": 10,
+        "satellites_target": 12
+      }
+    },
+    "storage": {
+      "type": "SD Card",
+      "interface": "SPI",
+      "max_size_gb": 32,
+      "file_format": "CSV"
+    }
+  },
+  "microcontroller": {
+    "type": "STM32H743",
+    "clock_speed_mhz": 480,
+    "ram_kb": 1024,
+    "flash_kb": 2048,
+    "core_voltage_v": 3.3
+  },
+  "rtos": {
+    "type": "FreeRTOS",
+    "kernel_tick_hz": 1000,
+    "tasks": {
+      "eps_task": {
+        "type": "Power Management",
+        "priority": 5,
+        "stack_words": 512,
+        "period_ms": 1000
+      },
+      "adcs_task": {
+        "type": "Attitude Control",
+        "priority": 4,
+        "stack_words": 2048,
+        "period_ms": 100
+      },
+      "payload_task": {
+        "type": "Sensor Fusion",
+        "priority": 3,
+        "stack_words": 1024,
+        "period_ms": 500
+      },
+      "comm_task": {
+        "type": "Communication",
+        "priority": 6,
+        "stack_words": 1024,
+        "period_ms": 100
+      }
+    }
+  },
+  "simulation": {
+    "simulation_speed_multiplier": 1.0,
+    "step_size_ms": 100,
+    "orbital_propagation": true,
+    "thermal_modeling": true,
+    "power_modeling": true,
+    "sensor_noise": true
+  }
+}

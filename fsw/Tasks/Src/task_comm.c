@@ -158,15 +158,17 @@ int32_t comm_task_init(const CommTaskConfig_t *config) {
     // TODO: LoRa başlat
     // RFM98W_Init(config->lora_frequency_hz, config->lora_tx_power_dbm);
     
-    // CSP başlat
+    // CSP başlat - Mock için devre dışı
+    /*
     csp_conf_t csp_conf;
     csp_conf_get_defaults(&csp_conf);
     csp_conf.address = config->csp_local_addr;
-    
+
     if (csp_init(&csp_conf) != CSP_ERR_NONE) {
         return -1;
     }
-    
+    */
+
     comm_state.initialized = 1;
     comm_state.status = COMM_OK;
     
@@ -293,24 +295,4 @@ int32_t comm_task_get_stats(uint32_t *tx_count, uint32_t *rx_count, uint32_t *er
     *rx_count = comm_state.rx_count;
     *errors = comm_state.error_count;
     return 0;
-}
-
-    // 4. Ana Dinleme Döngüsü (Yer İstasyonundan Komut Bekleme)
-    while (1) {
-        // Sokete bir bağlantı gelene kadar görevi uyut (Timeout yok: CSP_MAX_TIMEOUT)
-        csp_conn_t *conn = csp_accept(socket, CSP_MAX_TIMEOUT);
-        if (conn) {
-            // Bağlantı kuruldu, paketi oku
-            csp_packet_t *packet = csp_read(conn, 100);
-            if (packet != NULL) {
-                
-                // TODO: Yerden gelen paketi (Örn: Anteni aç komutu) AES-256 ile çöz ve işle
-                
-                // İşlem bitince paketi hafızadan sil (Memory leak olmaması için şart!)
-                csp_buffer_free(packet);
-            }
-            // Bağlantıyı kapat
-            csp_close(conn);
-        }
-    }
 }

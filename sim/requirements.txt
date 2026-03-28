@@ -1,0 +1,26 @@
+# sim/requirements.txt
+# Ulaş-S1 CubeSat Simülasyon - Python Bağımlılıkları
+
+# Sayısal hesaplamalar
+numpy>=1.23.0
+scipy>=1.9.0
+
+# Data işlemesi
+pandas>=1.5.0
+
+# JSON ve veri formatı
+jsonschema>=4.17.0
+
+# Visualization (opsiyonel)
+matplotlib>=3.6.0
+plotly>=5.11.0
+
+# Web interface (opsiyonel)
+flask>=2.2.0
+flask-cors>=3.0.10
+
+# Database (opsiyonel)
+influxdb-client>=1.18.0
+
+# Timing ve scheduling
+APScheduler>=3.10.0
