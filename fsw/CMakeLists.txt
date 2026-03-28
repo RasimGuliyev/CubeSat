@@ -21,10 +21,12 @@ add_executable(test_cubesat
     Tasks/Src/task_adcs.c
     Tasks/Src/task_payload.c
     Tasks/Src/task_comm.c
+    Tasks/Src/task_eps.c
     Drivers/Payload/radiation_sensor.c
     Drivers/Payload/barometer.c
     Drivers/Payload/gps.c
     Drivers/Storage/sd_card.c
+    Drivers/Magnetometer/rm3100.c
     Middleware/AES256/crypto.c
 )
 
@@ -35,6 +37,7 @@ target_include_directories(test_cubesat PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/Tasks/Src
     ${CMAKE_CURRENT_SOURCE_DIR}/Drivers/Payload
     ${CMAKE_CURRENT_SOURCE_DIR}/Drivers/Storage
+    ${CMAKE_CURRENT_SOURCE_DIR}/Drivers/Magnetometer
     ${CMAKE_CURRENT_SOURCE_DIR}/Middleware/AES256
 )
 

@@ -1,0 +1,7 @@
+Flask==2.2.3               # Web framework
+pycryptodome==3.18.0       # AES-256 encryption
+influxdb-client==1.18.0    # InfluxDB v2 API
+numpy==1.24.0              # Numerical computing
+matplotlib==3.7.0          # Data visualization
+python-dateutil==2.8.2     # Date utilities
+gunicorn==20.1.0           # WSGI server
