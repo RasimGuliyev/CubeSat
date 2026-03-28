@@ -18,6 +18,10 @@ void vTaskCOMM(void *pvParameters) {
         // Hata durumu: Sistemi yeniden başlat
     }
 
+    // LoRa arayüzünü CSP'ye kaydet ve varsayılan (default) ağ rotası yap
+    csp_iflist_add(&csp_if_lora);
+    csp_rtable_set(CSP_DEFAULT_ROUTE, 0, &csp_if_lora, CSP_NODE_MAC);
+
     // 2. Yönlendiriciyi (Router) FreeRTOS Görevi Olarak Başlat
     // Gelen paketleri doğru yerlere (Soketlere) dağıtan arka plan görevidir
     // 500 byte stack size, 1 öncelik seviyesi (priority)
