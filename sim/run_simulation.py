@@ -12,7 +12,7 @@ def main():
     """Main simulation launcher"""
     print("""
     ╔═══════════════════════════════════════════════════════════════════════╗
-    ║         ULAS-S1 CUBESAT - SOFTWARE-IN-THE-LOOP SIMULATOR             ║
+    ║         CUBESAT - SOFTWARE-IN-THE-LOOP SIMULATOR             ║
     ╚═══════════════════════════════════════════════════════════════════════╝
     
     Available modes:
