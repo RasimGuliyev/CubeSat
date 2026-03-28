@@ -7,6 +7,11 @@
 
 typedef void* QueueHandle_t;
 
+/* Static queue type for CSP compatibility */
+typedef struct {
+    uint8_t dummy;
+} StaticQueue_t;
+
 #define queueQUEUE_TYPE_BASE  (0)
 #define queueQUEUE_TYPE_MUTEX  (1)
 
@@ -45,6 +50,22 @@ BaseType_t xQueueSendFromISR(
 
 #define xQueueSendToBack xQueueSend
 #define xQueueSendToFront(queue, buf, timeout) xQueueSend(queue, buf, timeout)
+
+/* Peek queue */
+BaseType_t xQueuePeek(
+    QueueHandle_t xQueue,
+    void *pvBuffer,
+    TickType_t xTicksToWait
+);
+
+/* Mutex queue creation */
+QueueHandle_t xQueueCreateMutex(void);
+
+/* Semaphore take */
+BaseType_t xQueueSemaphoreTake(
+    QueueHandle_t xQueue,
+    TickType_t xTicksToWait
+);
 
 /* Peek queue */
 BaseType_t xQueuePeek(

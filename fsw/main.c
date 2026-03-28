@@ -1,6 +1,6 @@
 /**
  * @file main.c
- * @brief Ulaş-S1 CubeSat Flight Software - System Dispatcher & Main Entry Point
+ * @brief CubeSat Flight Software - System Dispatcher & Main Entry Point
  * 
  * Sorumluluğu:
  * 1. Hardware initialization (STM32H743 HAL, UART, I2C, SPI, RTC, Watchdog)
