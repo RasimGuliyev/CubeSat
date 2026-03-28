@@ -3,16 +3,16 @@
 // FreeRTOS Task olarak çalışır, periyodik olarak veri okur ve queue'ya koyar
 
 #include "task_payload.h"
-#include "../../../Drivers/Payload/radiation_sensor.h"
-#include "../../../Drivers/Payload/barometer.h"
-#include "../../../Drivers/Payload/gps.h"
-#include "../../../Drivers/Storage/sd_card.h"
-#include "../../../Middleware/AES256/crypto.h"
+#include "../../Drivers/Payload/radiation_sensor.h"
+#include "../../Drivers/Payload/barometer.h"
+#include "../../Drivers/Payload/gps.h"
+#include "../../Drivers/Storage/sd_card.h"
+#include "../../Middleware/AES256/crypto.h"
 #include <string.h>
 
 // FreeRTOS headers
-// #include "FreeRTOS.h"
-// #include "task.h"
+#include "FreeRTOS.h"
+#include "task.h"
 // #include "queue.h"
 // #include "semphr.h"
 
