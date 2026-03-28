@@ -1,0 +1,3 @@
+[submodule "fsw/Middleware/libcsp"]
+	path = fsw/Middleware/libcsp
+	url = https://github.com/libcsp/libcsp
