@@ -11,7 +11,7 @@
 // #include "ff.h"
 // #include "diskio.h"
 
-// STM32H743 HAL headers
+// STM32H743IIK6 HAL headers
 // #include "stm32h7xx_hal.h"
 
 // ============================================================================

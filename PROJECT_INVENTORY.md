@@ -222,7 +222,7 @@ CubeSat/
 - **Frame Size**: 250 bytes max
 
 ### Processing
-- **MCU**: STM32H743 @ 480 MHz
+- **MCU**: STM32H743IIK6 @ 480 MHz
 - **RAM**: 1024 KB
 - **Flash**: 2048 KB
 - **RTOS**: FreeRTOS
@@ -282,14 +282,14 @@ CubeSat/
 ## 🚀 DEPLOYMENT READINESS
 
 ### ✅ Ready for Hardware Integration
-- All software architectures designed for STM32H743
+- All software architectures designed for STM32H743IIK6
 - Drivers compatible with real I2C/SPI/UART interfaces
 - FreeRTOS integration verified with mock scheduler
 - Memory footprint optimized for embedded system
 
 ### ⏳ Next Phase (Hardware Integration)
 1. Replace mock FreeRTOS with real kernel
-2. Integrate actual HAL drivers for STM32H743
+2. Integrate actual HAL drivers for STM32H743IIK6
 3. Calibrate sensors with real hardware
 4. Test with actual LoRa transceiver
 5. Validate encryption with real key management

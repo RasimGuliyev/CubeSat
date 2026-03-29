@@ -10,7 +10,7 @@
 // #include "FreeRTOS.h"
 // #include "queue.h"
 
-// STM32H743 UART headers (gerçek projeye eklenecek)
+// STM32H743IIK6 UART headers (gerçek projeye eklenecek)
 // #include "stm32h7xx_hal.h"
 
 // ============================================================================

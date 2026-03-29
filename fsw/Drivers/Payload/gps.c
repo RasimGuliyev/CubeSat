@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <math.h>
 
-// STM32H743 HAL headers
+// STM32H743IIK6 HAL headers
 // #include "stm32h7xx_hal.h"
 
 // UART NMEA Buffer

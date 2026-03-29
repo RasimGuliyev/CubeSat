@@ -41,6 +41,8 @@ target_include_directories(test_cubesat PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/Middleware/AES256
 )
 
+target_compile_definitions(test_cubesat PRIVATE STM32H743IIK6)
+
 target_link_libraries(test_cubesat PRIVATE 
     m
     csp

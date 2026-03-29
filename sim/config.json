@@ -1,6 +1,3 @@
-# sim/config.json
-# CubeSat Sistem Konfigürasyonu
-
 {
   "satellite": {
     "name": "Ulas-S1",
@@ -109,7 +106,7 @@
     }
   },
   "microcontroller": {
-    "type": "STM32H743",
+    "type": "STM32H743IIK6",
     "clock_speed_mhz": 480,
     "ram_kb": 1024,
     "flash_kb": 2048,

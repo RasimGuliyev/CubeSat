@@ -6,7 +6,7 @@
 #include <string.h>
 #include <math.h>
 
-// STM32H743 HAL headers (gerçek projeye eklenecek)
+// STM32H743IIK6 HAL headers (gerçek projeye eklenecek)
 // #include "stm32h7xx_hal.h"
 
 // BMP388 Register Adresleri
