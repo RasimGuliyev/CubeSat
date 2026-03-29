@@ -18,7 +18,7 @@ typedef struct __attribute__((packed)) {
     float    mag_z;
     
     // OBC (Sistem) Verileri
-    uint8_t  mcu_temp;       // STM32H743 çekirdek sıcaklığı
+    uint8_t  mcu_temp;       // STM32H743IIK6 çekirdek sıcaklığı
     uint16_t free_ram;       // FreeRTOS boş RAM miktarı (Hata ayıklama için kritik)
 } BeaconPacket_t;
 

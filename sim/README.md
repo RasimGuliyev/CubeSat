@@ -191,7 +191,7 @@ Sistem parametreleri ve kalibrasyonu JSON formatında.
 - **attitude_determination**: Magnetometre kalibrasyonu, sensörler
 - **communication**: LoRa, CSP, AES şifreleme
 - **payload**: Sensör konfigürasyonu
-- **microcontroller**: STM32H743 özellikleri
+- **microcontroller**: STM32H743IIK6 özellikleri
 - **rtos**: FreeRTOS task tanımları
 - **simulation**: Simülasyon ayarları
 

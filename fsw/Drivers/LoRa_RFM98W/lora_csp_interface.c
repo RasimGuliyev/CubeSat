@@ -1,7 +1,7 @@
 #include <csp/csp.h>
 #include "FreeRTOS.h"
 #include "task.h"
-#include "stm32h7xx_hal.h" // STM32 Donanım kütüphanesi
+#include "stm32h7xx_hal.h" // STM32H743IIK6 donanım kütüphanesi
 
 // İleri bildirimler (Arayüz yapısını aşağıda tanımlayacağız)
 extern csp_iface_t csp_if_lora;
