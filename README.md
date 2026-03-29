@@ -63,12 +63,19 @@ CubeSat/
 │       ├── test_system.exe        # System integration test binary
 │       └── test_cubesat.exe       # Main CubeSat binary
 │
-├── gsw/                           # Ground Station Software
-│   ├── app.py                     # Flask web server
-│   ├── decoder.py                 # CSP packet decoder + AES decryption
+├── gsw/                            # Ground Station Software
 │   ├── docker-compose.yml
-│   └── requirements.txt            # Python dependencies
-│
+│   ├── requirements.txt            # Python dependencies                         
+│   └── backend/
+│       ├── app.py                     # Flask web server
+│       ├── create_demo_data.py
+│       ├── custom_sender.py           # Create simple UI in console 
+│       ├── data_transmission_sim.py
+│       ├── decoder.py                 # CSP packet decoder + AES decryption
+│       ├── simple_test.py
+│       ├── telemetry_receiver.py
+│       └── test_send_command.py
+│       
 ├── shared/                        # Shared headers & definitions
 │   ├── telemetry.h                # Telemetry packet structures
 │   ├── commands.h                 # Command definitions
